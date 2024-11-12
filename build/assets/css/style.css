@@ -157,5 +157,18 @@
 
 ::-webkit-scrollbar {width: 13px;}
 
-::-webkit-scrollbar-track {background-color:hsl(0, 0%, 95);}
- _
+::-webkit-scrollbar-track {background-color:hsl(0, 0%, 95); }
+
+::-webkit-scrollbar-thumb {background-color: var(--pistachio);} 
+
+
+
+
+/*---------------------*\
+  #REUSED STYLE
+\*---------------------*/
+
+
+
+
+
