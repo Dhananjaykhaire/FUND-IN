@@ -236,5 +236,8 @@
   height: 100%;
   outline: 1px solid var(--white_10);
   display: flex;
-  flex-direction: ;
+  flex-direction: column;
+  z-index: 1;
+  visibility: hidden;
+  transition: 0.25s var(--cubic-in);
 }
