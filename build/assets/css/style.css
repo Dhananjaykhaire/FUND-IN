@@ -196,7 +196,7 @@
   bottom:0;
   left: 50%;
   transform: translateX(-50%);
-  white: calc(100% - 140px);
+  width: calc(100% - 140px);
   height: 1px;
   background-color: var(--white_10);
 }
