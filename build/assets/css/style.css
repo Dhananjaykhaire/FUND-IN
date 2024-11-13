@@ -148,7 +148,7 @@
  }
  
  body{
-  background-color: var(--white);
+  background-color: var(--ee);
   font-size: 1.6rem;
   line-height: 1.8rem;
   overflow-x: hidden;
@@ -298,3 +298,15 @@
 }
 
 .navbar-link:is(:hover, :focus) {background-color: var(--pistachio);}
+
+
+
+.hero {
+  background-color:var(--granite-gray);
+  color: var(--white);
+  min-height: 700px;
+  padding-block: 120px 60px;
+  display: grid;
+  align-items: center;
+
+}
