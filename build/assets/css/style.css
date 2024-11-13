@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 /**
- * copyright 2022 codewithsadee
+ * copyright 2024 
  */
 
 
@@ -280,3 +280,21 @@
   transition-delay: 0.25s;
 }
 
+.navbar.active .navbar-list {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+
+.navbar-link{
+   color: var(--white);
+   font-size: var(--fs-9);
+   font-weight: var(--fw-500);
+   text-transform: uppercase;
+   display: flex;
+   align-items: center;
+   padding-inline: 10px 15px;
+   padding-block: 8px;
+   transition: var(--transition-1);
+}
+
+.navbar-link:is(:hover, :focus) {background-color: var(--pistachio);}
