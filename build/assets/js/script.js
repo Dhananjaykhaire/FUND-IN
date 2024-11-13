@@ -12,8 +12,8 @@ const navClosebtn = document.querySelector("[data-nav-close-btn]");
 
 const navElemArr = [navOpenBtn, navClosebtn];
 
-for (let 1 = 0; i < navElemArr.length; i++){
-    navElemArr[i].addEventListener("click", function()){
+for (let i = 0; i < navElemArr.length; i++){
+    navElemArr[i].addEventListener("click", function() ~{
         navbar.classList.toggle("active");
     });
 }
