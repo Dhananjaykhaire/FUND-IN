@@ -33,6 +33,6 @@ for (let i = 0; i< navbarLinks.length; i++){
  const header = document.querySelector("[data-header]");
 
  window.addEventListener("scroll", function(){
-   window.scrolly >= 50 ? header.classList.add("active")
+   window.scrollY >= 50 ? header.classList.add("active")
     : header.classList.remove("active");
  });
