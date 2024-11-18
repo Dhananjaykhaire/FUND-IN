@@ -886,7 +886,7 @@
 .footer .container {
   margin-inline: 15px;
   background-color: var(--errie-black-3);
-  padding: 1px;
+  padding: 20px;
 }
 
 .footer-list,
@@ -912,10 +912,222 @@
 
 .footer-link{ color: var(--white_50);}
 
-.footer-link:is(:hover, :focus) {
+:is(.footer-link, .copyright-link):is(:hover, :focus) {
   background-color: hsla(0, 0%, 100%, 0.05);
 }
 
 .copyright {text-align: center;}
 
 .copyright-link { display: inline-block;}
+
+
+
+/*---------------------*\
+  #MEDIA QUERIES
+\*---------------------*/
+
+/**
+ * resposive for larger than 450px screen
+*/
+
+@media (min-width: 450px) {
+
+   /**
+  * CUSTOM PROPERTY
+  */
+
+  :root {
+
+  
+
+  /**
+  * typography
+  */
+
+  --fs-3: 4rem;
+
+  }
+
+
+ /**
+  * CTA
+  */
+
+.cta {--fs-4: 4.1rem; }
+
+}
+
+
+
+/**
+ * resposive for larger than 580px screen
+*/
+
+@media (min-width: 580px) {
+
+  /**
+  * CUSTOM PROPERTY
+  */
+
+  :root {
+
+   /**
+  * typography
+  */
+
+  --fs-2: 5.5rem;
+}
+
+
+
+/**
+  * DONATE
+  */
+
+  .donate-card {
+    position: relative;
+    padding-block-end: 150px;
+    box-shadow: none;
+  }
+
+
+  .donate-card .card-content {
+    position: absolute;
+    width: 85%;
+    bottom: 0;
+    right: 0;
+    border-radius: 4px;
+    box-shadow: var(--card-shadow);
+  }
+
+
+  .donate-card .card-title {--fs-5:2.4rem}
+
+
+  /**
+  * EVENT
+  */
+
+  .event-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .event-card .card-subtitle {margin-block-start: 0;}
+
+  .event-card .card-title {
+    font-size: var(--fs-);
+    line-height: 1.4;
+  }
+
+
+  /**
+  *INSTA-POST
+  */
+
+  .insta-post-item {min-height: 45%;}
+}
+
+
+
+/**
+ * resposive for larger than 768px screen
+*/
+
+@media (min-width: 768px){
+  /**
+  * FEATURES, SERVICE
+  */
+  .features-list,
+  .service-list { grid-template-columns: 1fr 1fr; }
+
+  /**
+  * ABOUT
+  */
+  .banner-row {
+    display: flex;
+    gap: 20px;
+  }
+  .deco-title {
+    top: 10%;
+    left: calc(100% + 40px);
+  }
+  .about-immg { margin-block-end: 0; }
+  .about-img:first-child { margin-block-end: 30px; }
+
+  /**
+  * TESTINONIALS
+  */
+  .testi-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .test-text { margin-block-start: 0;}
+  /**
+  * INSTA POST
+  */
+  .insta-post-item{ min-widht: 32%;}
+  /**
+  * FOOTER
+  */
+  .footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: spacce-between;
+    gap: 40px;
+    padding-inline: 40px;
+  }
+
+  .footer-list,
+  .copyright { margin-inline: 0; }
+  .footer-list { scroll-margin-block-end: 0;}
+
+}
+
+/**
+* responsive for larger than 992px_screen
+*/
+@media (min-widht: 992px){
+  
+  /**
+  * CUSTOM PROPERTY
+  */
+
+  :root {
+
+    /**
+   * typography
+   */
+ 
+   --fs-2: 7.5rem;
+ }
+ /**
+ *Header
+ */
+ .header { transition: var(--transition-2); }
+ .header-action {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+ }
+ .search-btn {
+  color: var(--platinum);
+  font-size: 2.6rem;
+ }
+ .search-btn ion-icon { --ionicon-stroke-width: 50px; }
+
+ /**
+ /hero
+ */
+ .hero {
+  background-image: url("./assets/images/Picture2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  min-height: 500px;
+
+ }
+}
+
