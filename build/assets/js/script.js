@@ -3,14 +3,14 @@
 
 
 /**
- * navbar toggle
+ * Navbar toggle
  */
 
-const navOpenBtn = document.querySelector("[data-nav-Open-btn]");
+const navOpenbtn = document.querySelector("[data-nav-Open-btn]");
 const navbar = document.querySelector ("[data-navbar]");
 const navClosebtn = document.querySelector("[data-nav-close-btn]");
 
-const navElemArr = [navOpenBtn, navClosebtn];
+const navElemArr = [navOpenbtn, navClosebtn];
 
 for (let i = 0; i < navElemArr.length; i++){
     navElemArr[i].addEventListener("click", function() {
@@ -18,7 +18,7 @@ for (let i = 0; i < navElemArr.length; i++){
     });
 }
 /**
- * toggle navbar when click any navbar link
+ * Toggle navbar when click any navbar link
  */
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
 
@@ -28,7 +28,7 @@ for (let i = 0; i< navbarLinks.length; i++){
     });
 }
  /**
-  * header active when window scroll down
+  * Header active when window scroll down
   */
  const header = document.querySelector("[data-header]");
 
