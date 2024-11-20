@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('../build/assets/images/charitylogin.webp');
+    background-image: url('../images/charitylogin.webp');
     background-size:cover;
     background-position:center;
     background-repeat: no-repeat;
