@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,17 +6,19 @@
     font-family: Arial, sans-serif;
 }
 
+/* Body Styling */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-image: url('../images/charitylogin.webp');
-    background-size:cover;
-    background-position:center;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
+/* Form Container */
 .container {
     background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
     padding: 40px;
@@ -24,12 +27,14 @@ body {
     width: 400px;
 }
 
+/* Form Title */
 h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
+/* Input Fields */
 .input-group {
     margin-bottom: 15px;
 }
@@ -48,10 +53,11 @@ input {
     font-size: 16px;
 }
 
+/* Buttons */
 button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #a72889;
     border: none;
     color: white;
     font-size: 16px;
@@ -60,38 +66,43 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #882166;
 }
 
+/* Toggle Form Styling */
 #toggle-form {
     text-align: center;
     margin-top: 10px;
 }
 
 #toggle-form a {
-    color: #007bff;
-    text-decoration: none;
+    color: black;
+    border-radius: 5px; 
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none; 
+    display: inline-block; 
+    transition: background-color 0.3s ease; 
 }
 
-#toggle-form a:hover {
-    text-decoration: underline;
-}
 
+/* Success Message Styling */
 .success-message {
     position: fixed;
     left: 50%;
     bottom: 20px; /* Adjust the distance from the bottom as needed */
     transform: translateX(-50%); /* Center horizontally */
-    background-color: #28a745;
-    color: white;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border-radius: 5px;
     display: none; /* Initially hidden */
     z-index: 1000; /* Ensure it appears above other content */
 }
+
 #success-message {
     margin-top: 20px;
-    color: green;
+    color: rgba(0, 0, 0, 0);
     font-size: 16px;
     text-align: center;
 }

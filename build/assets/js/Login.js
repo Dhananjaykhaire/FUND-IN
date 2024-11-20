@@ -1,8 +1,11 @@
 document.getElementById("toggle-link").addEventListener("click", function (e) {
     e.preventDefault();
+
     const formTitle = document.getElementById("form-title");
     const submitBtn = document.getElementById("submit-btn");
     const confirmPasswordGroup = document.getElementById("confirm-password-group");
+    const fullNameGroup = document.getElementById("full-name-group");
+    const toggleLink = document.getElementById("toggle-link");
     const successMessage = document.getElementById("success-message");
 
     // Toggle between Login and Register
@@ -10,24 +13,36 @@ document.getElementById("toggle-link").addEventListener("click", function (e) {
         formTitle.innerText = "Register";
         submitBtn.innerText = "Register";
         confirmPasswordGroup.style.display = "block"; // Show confirm password for registration
-        document.getElementById("toggle-form").innerHTML = 'Already have an account? <a href="#" id="toggle-link">Login</a>';
+        fullNameGroup.style.display = "block"; // Show full name field for registration
+        toggleLink.innerText = "Login"; // Change link text
+        toggleLink.dataset.mode = "login"; // Add a data attribute to track mode
         successMessage.style.display = "none"; // Hide success message on switch
     } else {
         formTitle.innerText = "Login";
         submitBtn.innerText = "Login";
         confirmPasswordGroup.style.display = "none"; // Hide confirm password for login
-        document.getElementById("toggle-form").innerHTML = 'Don\'t have an account? <a href="#" id="toggle-link">Register</a>';
+        fullNameGroup.style.display = "none"; // Hide full name field for login
+        toggleLink.innerText = "Register"; // Change link text
+        toggleLink.dataset.mode = "register"; // Add a data attribute to track mode
         successMessage.style.display = "none"; // Hide success message on switch
     }
 });
 
 document.getElementById("auth-form").addEventListener("submit", function (e) {
     e.preventDefault();
+
     const formTitle = document.getElementById("form-title").innerText;
 
     if (formTitle === "Register") {
+        const fullName = document.getElementById("full-name").value;
         const password = document.getElementById("password").value;
         const confirmPassword = document.getElementById("confirm-password").value;
+
+        // Check if full name is filled
+        if (!fullName) {
+            alert("Full Name is required for registration.");
+            return;
+        }
 
         // Check if passwords match
         if (password !== confirmPassword) {

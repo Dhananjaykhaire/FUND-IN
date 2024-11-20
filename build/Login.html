@@ -13,6 +13,12 @@
         <div class="form-container">
             <h2 id="form-title">Login</h2>
             <form id="auth-form">
+                 <!-- Full Name Field (hidden initially) -->
+                 <div class="input-group" id="full-name-group" style="display: none;">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="Enter your full name">
+                </div>
+                
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="Enter your email" required>
@@ -33,7 +39,7 @@
         </div>
     </div>
     
-    <div id="success-message" style="display: none; text-align: center; color: green; margin-top: 20px;">
+    <div class="success-message" id="success-message">
         Registration was successful!
     </div>
 
