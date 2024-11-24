@@ -51,3 +51,14 @@ window.addEventListener("scroll", function () {
     window.location.href = "login.html";
   });
 
+  const searchBtn = document.querySelector('.search-btn');
+  const searchBar = document.querySelector('.search-bar');
+  
+  searchBtn.addEventListener('click', () => {
+    searchBar.classList.toggle('active'); 1 
+  });
+  
+  const closeBtn = document.querySelector('.close-btn');
+  closeBtn.addEventListener('click', () => {
+    searchBar.classList.remove('active');
+  });
