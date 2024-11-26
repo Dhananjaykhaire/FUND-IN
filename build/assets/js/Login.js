@@ -100,7 +100,7 @@ async function handleFormSubmit(e) {
             console.log("User logged in:", user);
 
             // Redirect to main page after login
-            window.location.href = "main.html"; // Replace with your main page
+            window.location.href = "index.html"; // Replace with your main page
         } catch (error) {
             console.error("Error during login:", error.message);
             alert(`Login failed: ${error.message}`);
