@@ -1,6 +1,27 @@
+// Initialize Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBVX06Q0ZLXSBjcNlLJCvTN-x7ueBxIKyI",
+    authDomain: "fund-in-5ff6f.firebaseapp.com",
+    databaseURL: "https://fund-in-5ff6f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "fund-in-5ff6f",
+    storageBucket: "fund-in-5ff6f.appspot.com",
+    messagingSenderId: "256974909181",
+    appId: "1:256974909181:web:6eded49610b9be72369894",
+    measurementId: "G-4F00LL1T5Q",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Add Event Listeners
 document.getElementById("toggle-link").addEventListener("click", toggleForm);
 document.getElementById("auth-form").addEventListener("submit", handleFormSubmit);
 
+// Toggle between Login and Register
 function toggleForm(e) {
     e.preventDefault();
 
@@ -11,56 +32,78 @@ function toggleForm(e) {
     const toggleLink = document.getElementById("toggle-link");
     const successMessage = document.getElementById("success-message");
 
-    // Toggle between Login and Register
     if (formTitle.innerText === "Login") {
         formTitle.innerText = "Register";
         submitBtn.innerText = "Register";
-        confirmPasswordGroup.style.display = "block"; // Show confirm password for registration
-        fullNameGroup.style.display = "block"; // Show full name for registration
+        confirmPasswordGroup.style.display = "block";
+        fullNameGroup.style.display = "block";
         toggleLink.innerText = "Login";
-        toggleLink.setAttribute("data-mode", "login"); // Update mode
-        successMessage.style.display = "none"; // Hide success message on switch
+        successMessage.style.display = "none";
     } else {
         formTitle.innerText = "Login";
         submitBtn.innerText = "Login";
-        confirmPasswordGroup.style.display = "none"; // Hide confirm password for login
-        fullNameGroup.style.display = "none"; // Hide full name for login
+        confirmPasswordGroup.style.display = "none";
+        fullNameGroup.style.display = "none";
         toggleLink.innerText = "Register";
-        toggleLink.setAttribute("data-mode", "register"); // Update mode
-        successMessage.style.display = "none"; // Hide success message on switch
+        successMessage.style.display = "none";
     }
 }
 
-function handleFormSubmit(e) {
+// Handle Form Submit
+async function handleFormSubmit(e) {
     e.preventDefault();
 
     const formTitle = document.getElementById("form-title").innerText;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
     if (formTitle === "Register") {
         const fullName = document.getElementById("full-name").value;
-        const password = document.getElementById("password").value;
         const confirmPassword = document.getElementById("confirm-password").value;
 
         if (!fullName) {
             alert("Full Name is required for registration.");
-            return; // Stop further execution if full name is missing
+            return;
         }
 
         if (password !== confirmPassword) {
             alert("Passwords do not match. Please try again.");
-            return; // Stop further execution if passwords don't match
+            return;
         }
 
-        // Show success message if registration is successful
-        const successMessage = document.getElementById("success-message");
-        successMessage.style.display = "block";
+        try {
+            // Register the user with Firebase Authentication
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log("User registered:", user);
 
-        // Auto-hide the message after 3 seconds
-        setTimeout(() => {
-            successMessage.style.display = "none";
-        }, 3000);
+            // Show success message
+            const successMessage = document.getElementById("success-message");
+            successMessage.style.display = "block";
+
+            // Auto-hide the message after 3 seconds
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 3000);
+
+            // Switch to Login mode automatically
+            document.getElementById("toggle-link").click();
+        } catch (error) {
+            console.error("Error during registration:", error.message);
+            alert(`Registration failed: ${error.message}`);
+        }
     } else {
-        // Logic for login (e.g., check credentials)
-        alert("Login successful!"); // You can replace this with actual login logic
+        try {
+            // Log in the user with Firebase Authentication
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log("User logged in:", user);
+
+            // Redirect to main page after login
+            window.location.href = "main.html"; // Replace with your main page
+        } catch (error) {
+            console.error("Error during login:", error.message);
+            alert(`Login failed: ${error.message}`);
+        }
     }
 }
