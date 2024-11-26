@@ -1,0 +1,53 @@
+{
+    "events": {
+      "event1": {
+        "id": "01",
+        "title": "Help Build Homes for the Homeless",
+        "date": "2024-12-15",
+        "description": "A charity event to raise funds for building homes.",
+        "location": "New York City",
+        "imageUrl": "https://example.com/images/event1.jpg"
+      },
+      "event2": {
+        "id": "02",
+        "title": "Clean Water for All Campaign",
+        "date": "2024-11-30",
+        "description": "Raising funds to provide clean water in rural areas.",
+        "location": "Los Angeles",
+        "imageUrl": "https://example.com/images/event2.jpg"
+      }
+    },
+    "donations": {
+      "donation1": {
+        "donorName": "John Doe",
+        "amount": 50,
+        "date": "2024-11-25",
+        "message": "Keep up the great work!"
+      },
+      "donation2": {
+        "donorName": "Jane Smith",
+        "amount": 100,
+        "date": "2024-11-20",
+        "message": "Happy to help!"
+      }
+    },
+    "causes": {
+      "cause1": {
+        "id": "c01",
+        "name": "Educational Support",
+        "goalAmount": 5000,
+        "collectedAmount": 2000,
+        "description": "Providing educational resources to underprivileged children.",
+        "imageUrl": "https://example.com/images/cause1.jpg"
+      },
+      "cause2": {
+        "id": "c02",
+        "name": "Health Care for All",
+        "goalAmount": 10000,
+        "collectedAmount": 7000,
+        "description": "Supporting medical aid for those in need.",
+        "imageUrl": "https://example.com/images/cause2.jpg"
+      }
+    }
+  }
+  
