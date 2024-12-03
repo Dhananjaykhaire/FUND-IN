@@ -61,26 +61,5 @@ window.addEventListener("scroll", function () {
   closeBtn.addEventListener('click', () => {
     searchBar.classList.remove('active');
 
-    // Replace 'YOUR_SITE_KEY' with your actual reCAPTCHA Site Key
-const siteKey = "6Leq_JAqAAAAAD9-olbro_idbv5xSu4kSC6G98rj";
-
-// Create the reCAPTCHA element
-const recaptchaDiv = document.createElement("div");
-recaptchaDiv.className = "g-recaptcha";
-recaptchaDiv.setAttribute("data-sitekey", siteKey);
-
-// Append the reCAPTCHA element to a specific location in your form
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact"); // Replace with your form's ID
-  form.appendChild(recaptchaDiv);
-
-  // Load the reCAPTCHA script
-  const script = document.createElement("script");
-  script.src = "https://www.google.com/recaptcha/api.js";
-  script.async = true;
-  script.defer = true;
-  document.body.appendChild(script);
-});
-
- 
+  
     });
