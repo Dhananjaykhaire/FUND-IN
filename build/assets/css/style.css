@@ -262,7 +262,6 @@ body {
   #HEADER
 \*-----------------------------------*/
 
-.lang-switch,
 .header-action { display: none; }
 
 .header {
@@ -920,7 +919,7 @@ body {
 
 /* Button Styling */
 .section.contact button {
-  background-color: #007bff;
+  background-color: #000000;
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -936,6 +935,41 @@ body {
   background-color: #0056b3;
 }
 
+.category-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.category-checkbox input[type="checkbox"] {
+  background-color: #fff; /* Background color of the unchecked checkbox */
+  border: 1px solid #ccc; /* Border color of the unchecked checkbox */
+  margin-right: 5px;
+  /* Customize checkbox appearance */
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.category-checkbox input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff; /* Color of the checkmark */
+  /* Add a checkmark icon using pseudo-element */
+  content: "\2713"; /* Unicode for checkmark */
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+.category-checkbox label {
+  font-weight: bold;
+  cursor: pointer;
+}
 /* Responsiveness */
 @media (max-width: 768px) {
   .section.contact form {
@@ -970,7 +1004,7 @@ body {
 }
 
 .search-btn, .close-btn {
-  background-color: #ccc;
+
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -1683,7 +1717,7 @@ body {
     font-weight: var(--fw-600);
   }
 
-  .lang-switch option { color: var(--eerie-black-1); }
+  
 
   .navbar {
     all: unset;

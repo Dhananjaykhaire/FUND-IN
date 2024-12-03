@@ -45,14 +45,7 @@
         <a href="#" class="logo">FUND-IN</a>
       </h1>
 
-      <select name="language" class="lang-switch">
-
-        <option value="english">English</option>
-        <option value="hindi">Hindi</option>
-        <option value="marathi">Marathi</option>
-
-      </select>
-
+     
       <!-- Sign In Button -->
       <button id="signInButton" class="btn btn-primary">
         <a href="login.html" style="color: white; text-decoration: none;">Sign In</a>
@@ -1035,22 +1028,70 @@
       
       <section class="section contact" id="contact">
         <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-    
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-    
-            <button type="submit">Send Message</button>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleFormSubmit(event)">
+          <input type="hidden" name="access_key" value="b0a3e271-4618-4f95-a1b1-9d9b2185db30" />
+          
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" placeholder="Your Name" required /> <br />
+          
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" placeholder="Email ID" required /> <br />
+          
+          <label for="phone">Phone no:</label>
+          <input type="tel" name="phone" id="phone" placeholder="Phone no" required /> <br />
+          
+          <label for="message">Message:</label>
+          <textarea name="message" id="message" placeholder="How can we help you?" required></textarea> <br />
+          
+          <!-- reCAPTCHA -->
+          <div class="g-recaptcha" data-sitekey="6Leq_JAqAAAAAD9-olbro_idbv5xSu4kSC6G98rj"></div>
+          
+          <!-- Honeypot Spam Protection -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          
+          <button type="submit">Send Message</button>
         </form>
-    </section>
-
-
-
+      </section>
+      
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        // JavaScript to reset the form
+        function handleFormSubmit(event) {
+          event.preventDefault(); // Prevent default submission for custom behavior
+      
+          const form = document.getElementById("contactForm");
+          
+          // Get the reCAPTCHA response
+          const recaptchaResponse = grecaptcha.getResponse();
+          if (recaptchaResponse.length == 0) {
+            Swal.fire("Error", "Please complete the reCAPTCHA.", "error");
+            return;
+          }
+          
+          // Append the reCAPTCHA response to the form data
+          const formData = new FormData(form);
+          formData.append('g-recaptcha-response', recaptchaResponse); // Add the reCAPTCHA response
+          
+          // Use the Fetch API to submit the form data
+          fetch(form.action, {
+            method: form.method,
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                Swal.fire("Successful", "Your message was successfully received", "success");
+                form.reset(); // Reset the form
+              } else {
+                Swal.fire("Error", "Failed to send message. Please try again.", "error");
+              }
+            })
+            .catch((error) => {
+              Swal.fire("Error", "An error occurred: " + error.message, "error");
+            });
+        }
+      </script>
+      
       <!-- 
         - #INSTA POST
       -->
@@ -1216,5 +1257,4 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
-
 </html>
