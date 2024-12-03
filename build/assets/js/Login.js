@@ -70,5 +70,43 @@ function handleFormSubmit(e) {
         alert("Login successful!"); 
         window.location.href = "index.html"; 
         
+         // Login functionality with Firebase
+    const passwordInput = document.getElementById("passwordInput"); // Added for login
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBVX06Q0ZLXSBjcNlLJCvTN-x7ueBxIKyI",
+        authDomain: "fund-in-5ff6f.firebaseapp.com",
+        databaseURL: "https://fund-in-5ff6f-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "fund-in-5ff6f",
+        storageBucket: "fund-in-5ff6f.appspot.com",
+        messagingSenderId: "256974909181",
+        appId: "1:256974909181:web:6eded49610b9be72369894",
+        measurementId: "G-4F00LL1T5Q"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+    // Get a reference to the authentication service
+    const auth = getAuth();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // User successfully logged in
+        const user = userCredential.user;
+        console.log("Logged in user:", user);
+        alert("Login successful!");
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // Handle login errors (e.g., display error message)
+        console.error("Login error:", errorCode, errorMessage);
+        alert("Login failed: " + error);
+      });
     }
 }

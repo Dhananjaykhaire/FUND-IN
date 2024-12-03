@@ -1021,7 +1021,7 @@
         </div>
       </section>
 
-
+ 
       <!-- 
         - #CONTACT
       -->
@@ -1043,9 +1043,7 @@
           <label for="message">Message:</label>
           <textarea name="message" id="message" placeholder="How can we help you?" required></textarea> <br />
           
-          <!-- reCAPTCHA -->
-          <div class="g-recaptcha" data-sitekey="6Leq_JAqAAAAAD9-olbro_idbv5xSu4kSC6G98rj"></div>
-          
+        
           <!-- Honeypot Spam Protection -->
           <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           
@@ -1061,17 +1059,6 @@
           event.preventDefault(); // Prevent default submission for custom behavior
       
           const form = document.getElementById("contactForm");
-          
-          // Get the reCAPTCHA response
-          const recaptchaResponse = grecaptcha.getResponse();
-          if (recaptchaResponse.length == 0) {
-            Swal.fire("Error", "Please complete the reCAPTCHA.", "error");
-            return;
-          }
-          
-          // Append the reCAPTCHA response to the form data
-          const formData = new FormData(form);
-          formData.append('g-recaptcha-response', recaptchaResponse); // Add the reCAPTCHA response
           
           // Use the Fetch API to submit the form data
           fetch(form.action, {
