@@ -48,7 +48,7 @@
      
       <!-- Sign In Button -->
       <button id="signInButton" class="btn btn-primary">
-        <a href="login.html" style="color: white; text-decoration: none;">Sign In</a>
+        <a href="login.html" style="color: rgb(255, 255, 255); text-decoration: none;">Sign In</a>
       </button>
       
     
@@ -115,28 +115,27 @@
             </a>
           </li>
 
-          
         </ul>
 
       </nav>
 
       <div class="header-action">
 
-        <button class="search-btn " aria-label="Search">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
         <div class="search-bar">
-          <input type="text" placeholder="Search...">
-          <button class="close-btn">
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-        </div>
-
+          <input type="text" id="search-input" placeholder="Search...">
+          <button id="search-button"><i class="fas fa-search"></i></button>
+          <div id="search-results"></div>
+      </div>
         <button class="btn btn-primary">
           <span>Donation</span>
 
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
+
+         <!-- Admin Icon -->
+  <a href="admin.html" class="admin-icon" title="Admin">
+    <ion-icon name="person-circle-outline"></ion-icon>
+  </a>
 
       </div>
 
@@ -174,8 +173,8 @@
             Join us in making a difference today.
           </p>
 
-          <button class="btn btn-primary">
-            <span>Contribute Today</span>
+          <button class="btn btn-primary" id="joinUsButton">
+            <span>Join Us</span>
 
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
           </button>
@@ -397,9 +396,9 @@
         <div class="container">
 
           <div class="cta-content">
-            <h2 class="h2 section-title">324+ Partnerships for Positive Change</h2>
+            <h2 class="h2 section-title" >324+ Partnerships for Positive Change</h2>
 
-            <button class="btn btn-outline">
+            <button class="btn btn-outline"id="Support Us Today">
               <span>Support Us Today</span>
 
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -1209,10 +1208,9 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js">
+  <script src="./assets/js/script.js"></script>
+  <script src="assets/js/search.js"></script>
 
-    
-  </script>
 
 <script type="module">
   // Import the functions you need from the SDKs you need
@@ -1243,6 +1241,6 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

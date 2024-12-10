@@ -50,16 +50,32 @@ window.addEventListener("scroll", function () {
     window.location.href = "login.html";
   });
 
-  const searchBtn = document.querySelector('.search-btn');
-  const searchBar = document.querySelector('.search-bar');
-  
-  searchBtn.addEventListener('click', () => {
-    searchBar.classList.toggle('active'); 
-  });
-  
-  const closeBtn = document.querySelector('.close-btn');
-  closeBtn.addEventListener('click', () => {
-    searchBar.classList.remove('active');
+ // Replace this URL with the link to your Google Form
+const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeAwFTCdwCswOifhLofvvpkYwk-gpxx8wSwZ8A34JcYeswGMg/viewform?usp=preview";
 
-  
-    });
+document.getElementById("joinUsButton").addEventListener("click", () => {
+  // Open the Google Form in a new tab
+  window.open(googleFormUrl, "_blank");
+});
+
+  // Attach an event listener to the "Support Us Today" button
+document.getElementById("Support Us Today").addEventListener("click", function () {
+  // Google Form link
+  const googleFormUrl = "https://forms.gle/your-google-form-link";
+
+  // Open the form in a new tab
+  window.open(googleFormUrl, "_blank");
+});
+
+  const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+searchInput.addEventListener('input', () => {
+    const searchQuery = searchInput.value.toLowerCase();
+    document.title = `Search: ${searchQuery}`;
+
+    // ... your search logic here ...
+
+    // Clear the search input after the search
+    searchInput.value = '';
+});
