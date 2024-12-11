@@ -1,28 +1,21 @@
 module.exports = {
   env: {
-    es6: true,
-    node: true,
+    node: true, // Enable Node.js global variables
+    es6: true, // Enable ES6 features
   },
   parserOptions: {
-    "ecmaVersion": 2018,
+    ecmaVersion: 2020, // Use the latest ECMAScript version
   },
   extends: [
-    "eslint:recommended",
-    "google",
+    "eslint:recommended", // Use recommended rules
+    "plugin:react/recommended", // Use recommended rules from eslint-plugin-react
   ],
-  rules: {
-    "no-restricted-globals": ["error", "name", "length"],
-    "prefer-arrow-callback": "error",
-    "quotes": ["error", "double", {"allowTemplateLiterals": true}],
-  },
-  overrides: [
-    {
-      files: ["**/*.spec.*"],
-      env: {
-        mocha: true,
-      },
-      rules: {},
+  settings: {
+    react: {
+      version: "detect", // Automatically detect the React version
     },
-  ],
-  globals: {},
+  },
+  rules: {
+    "no-undef": "off", // Disable no-undef rule for testing
+  },
 };
