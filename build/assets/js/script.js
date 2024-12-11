@@ -93,16 +93,3 @@ document.getElementById("later-events-btn").addEventListener("click", function (
   // Redirect to the event URL
   window.location.href = eventUrl; // Opens in the same tab
 });
-
-  const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
-
-searchInput.addEventListener('input', () => {
-    const searchQuery = searchInput.value.toLowerCase();
-    document.title = `Search: ${searchQuery}`;
-
-    // ... your search logic here ...
-
-    // Clear the search input after the search
-    searchInput.value = '';
-});
