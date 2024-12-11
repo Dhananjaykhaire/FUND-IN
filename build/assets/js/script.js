@@ -93,3 +93,20 @@ document.getElementById("later-events-btn").addEventListener("click", function (
   // Redirect to the event URL
   window.location.href = eventUrl; // Opens in the same tab
 });
+
+// Attach an event listener to the "Donation" button by ID
+document.getElementById("donation-btn").addEventListener("click", function () {
+  // Redirect to the payment gateway page (if you have a separate page)
+  const paymentPageUrl = "payment.html"; // Replace with your actual payment page URL
+  window.location.href = paymentPageUrl; // Opens the payment page in the same tab
+
+  // Alternatively, if the payment process is handled within the same page:
+  // Uncomment the following line to directly start the payment process
+  // startPayment(500); // Start payment with a fixed amount (replace with a dynamic amount if needed)
+});
+
+// Function to start the payment process (already in your main.js)
+const startPayment = (amount) => {
+  initialize(amount); // Call the initialize function with the desired amount
+};
+
