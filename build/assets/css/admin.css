@@ -194,19 +194,19 @@ body {
   }
   
   .card:first-child {
-    background-color: rgb(213, 0, 0);
+    background-color: rgba(255, 79, 79, 0.975);
   }
   
   .card:nth-child(2) {
-    background-color: rgb(46, 125, 50);
+    background-color: rgba(62, 150, 66, 0.847);
   }
   
   .card:nth-child(3) {
-    background-color: rgb(255, 111, 0);
+    background-color: rgba(186, 103, 39, 0.852);
   }
   
   .card:nth-child(4) {
-    background-color: rgb(29, 38, 154);
+    background-color: rgb(59, 89, 199);
   }
   
   .card-inner {
@@ -258,7 +258,10 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
-  
+  .social-media .product-icon-background .text-secondary {
+  font-style:normal;
+  size: 50px;
+  }
   .product-icon {
     color: rgb(255, 255, 255);
     width: 48px;
