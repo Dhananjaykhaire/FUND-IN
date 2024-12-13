@@ -96,17 +96,37 @@ document.getElementById("later-events-btn").addEventListener("click", function (
 
 // Attach an event listener to the "Donation" button by ID
 document.getElementById("donation-btn").addEventListener("click", function () {
-  // Redirect to the payment gateway page (if you have a separate page)
-  const paymentPageUrl = "payment.html"; // Replace with your actual payment page URL
-  window.location.href = paymentPageUrl; // Opens the payment page in the same tab
+  const paymentPageUrl = "payment.html"; 
+  window.location.href = paymentPageUrl; 
 
-  // Alternatively, if the payment process is handled within the same page:
-  // Uncomment the following line to directly start the payment process
-  // startPayment(500); // Start payment with a fixed amount (replace with a dynamic amount if needed)
+ 
 });
 
-// Function to start the payment process (already in your main.js)
+
 const startPayment = (amount) => {
-  initialize(amount); // Call the initialize function with the desired amount
+  initialize(amount); 
 };
 
+
+ 
+const donateOption1 = document.getElementById('donateOption1');
+const donateOption2 = document.getElementById('donateOption2');
+const donateOption3 = document.getElementById('donateOption3');
+const donateOption4 = document.getElementById('donateOption4');
+
+
+donateOption1.addEventListener('click', () => {
+  window.location.href = 'payment.html'; 
+});
+
+donateOption2.addEventListener('click', () => {
+  window.location.href = 'payment.html'; 
+});
+
+donateOption3.addEventListener('click', () => {
+  window.location.href = 'payment.html'; 
+});
+
+donateOption4.addEventListener('click', () => {
+  window.location.href = 'payment.html'; 
+});

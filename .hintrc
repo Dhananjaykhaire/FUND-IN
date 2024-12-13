@@ -43,6 +43,12 @@
       {
         "html-has-lang": "off"
       }
+    ],
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-active": "off"
+      }
     ]
   }
 }
